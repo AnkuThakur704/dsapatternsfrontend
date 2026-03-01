@@ -5,12 +5,13 @@ function App() {
   const [quotetext, setquotetext] = useState("")
   const [patterns, setpatterns] = useState([])
   const quote = async()=>{
+    //https://api.api-ninjas.com/v2/quotes?categories=success,wisdom,inspirational,courage
     console.log("quote hit")
     console.log("apikey:",import.meta.env.VITE_API_KEY)
-    const q = await fetch("https://api.api-ninjas.com/v2/quotes?categories=success,wisdom,inspirational,courage",{method:"GET",
-      headers:{
-        "X-Api-Key": import.meta.env.VITE_API_KEY
-      }
+    const q = await fetch("https://api.quotable.io/random",{method:"GET"
+      // headers:{
+      //   "X-Api-Key": import.meta.env.VITE_API_KEY
+      // }
     })
     const qd = await q.json()
     setquotetext(qd)

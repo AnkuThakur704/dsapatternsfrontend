@@ -7,7 +7,7 @@ function App() {
   const quote = async()=>{
     //https://api.api-ninjas.com/v2/quotes?categories=success,wisdom,inspirational,courage
     //https://api.api-ninjas.com/v2/randomquotes?categories=success,wisdom
-    const q = await fetch('https://api.api-ninjas.com/v2/quotes?categories=success,inspirational',{method:"GET",
+    const q = await fetch('https://api.api-ninjas.com/v2/randomquotes?categories=success,inspirational',{method:"GET",
       headers:{
         "X-Api-Key": import.meta.env.VITE_API_KEY
       }

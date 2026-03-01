@@ -6,8 +6,7 @@ function App() {
   const [patterns, setpatterns] = useState([])
   const quote = async()=>{
     //https://api.api-ninjas.com/v2/quotes?categories=success,wisdom,inspirational,courage
-    console.log("quote hit")
-    console.log("apikey:",import.meta.env.VITE_API_KEY)
+    
     const q = await fetch("https://api.quotable.io/random",{method:"GET"
       // headers:{
       //   "X-Api-Key": import.meta.env.VITE_API_KEY
@@ -62,7 +61,7 @@ function App() {
       <div className='w-screen h-screen bg-zinc-900 text-zinc-300 text-2xl flex flex-col items-center p-2'>
         <p>DSA Patterns encountered so far</p>
         <div className='w-screen h-0.5 bg-gray-500 mt-3'></div>
-        <p className='text-[17px] mt-2 text-white'>{quotetext[0]?quotetext[0].quote:"Loading quote for today..."}</p>
+        <p className='text-[17px] mt-2 text-white'>{quotetext?quotetext._id:"Loading quote for today..."}</p>
         <div className='flex items-center mt-5 gap-3'>
           <div className='w-[80vw] h-150 bg-zinc-900 rounded-2xl border border-zinc-700 grid grid-cols-2 gap-2 p-3 overflow-y-auto'>
             {patterns.map((item,key)=>{

@@ -59,7 +59,8 @@ function App() {
   return (
     <>
       <div className='w-screen h-screen bg-zinc-900 text-zinc-300 text-2xl flex flex-col items-center p-2'>
-        <p>DSA Patterns encountered so far</p>
+        <div className='flex gap-5'><p>DSA Patterns encountered so far</p>
+        <p className='border border-zinc-400 px-2 rounded-xl py-1'>{patterns.length}</p></div>
         <div className='w-screen h-0.5 bg-gray-500 mt-3'></div>
         <p className='text-[17px] mt-2 text-white'>{quotetext[0]?quotetext[0].quote:"Loading quote for today..."}</p>
         <div className='flex items-center mt-5 gap-3'>
